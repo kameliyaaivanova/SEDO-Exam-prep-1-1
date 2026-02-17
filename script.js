@@ -21,6 +21,16 @@ function calculateAndDisplay(fn) {
 
   const a = Number(rawA);
   const b = Number(rawB);
+  document.getElementById('result').textContent = fn(a, b);
+}
+
+['add', 'subtract', 'multiply'].forEach(op => {
+  document.getElementById(`btn-${op}`)
+    .addEventListener('click', () => calculateAndDisplay(window[op]));
+});
+
+  const a = Number(rawA);
+  const b = Number(rawB);
   const a = Number(document.getElementById('a').value);
   const b = Number(document.getElementById('b').value);
   document.getElementById('result').textContent = fn(a, b);
